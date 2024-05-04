@@ -1,0 +1,8 @@
+transformers
+sklearn
+numpy
+pandas
+jupyter
+torch
+datasets
+nltk
