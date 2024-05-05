@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker run --rm --name=test_kalexu97 -p 1311:1311 --gpus 1  -v ~/Projects/DeepLearning/Project/Docker_test/:/root/docker_test -ti docker_test # -c "cd src && source activate ml_test && python train.py"77
+docker run --rm -ti --name=kalexu97-dck_baseline -p 1316:1316 --gpus 1  -v /home/kalexu97:/workspace -v /mnt/local:/workspace/mnt/local kalexu97_dc_baseline

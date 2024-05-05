@@ -14,11 +14,11 @@ RUN wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh \
     && sh Miniconda3-latest-Linux-x86_64.sh -b \
     && rm -f Miniconda3-latest-Linux-x86_64.sh
 
-RUN conda create -y -n kaggle_env python=3.6
+RUN conda create -y -n virt_env python=3.6
 
 COPY . src/
 RUN /bin/bash -c "cd src \
-    && source activate kaggle_env \
+    && source activate virt_env \
     && pip install -r requirements_kaggle.txt \
     && jupyter notebook --generate-config \
     && cp /src/jupyter_notebook_config.py /root/.jupyter/jupyter_notebook_config.py"
