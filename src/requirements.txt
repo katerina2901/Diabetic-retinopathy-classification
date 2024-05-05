@@ -7,5 +7,6 @@ torch
 datasets
 torchvision
 scikit-image
+matplotlib
 pillow
 nltk
