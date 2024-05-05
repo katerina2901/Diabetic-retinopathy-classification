@@ -5,4 +5,7 @@ pandas
 jupyter
 torch
 datasets
+torchvision
+scikit-image
+pillow
 nltk
