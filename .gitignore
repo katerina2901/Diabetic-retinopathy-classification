@@ -1,3 +1,14 @@
 Docker_test/
-
+.bash_history
+.bash_logout
+.bashrc
+.cache/
+.config/
+.docker/
+.hushlogin
+.lesshst
+.local/
+.profile
+.tmux.conf
+dataset/
 
