@@ -4,7 +4,7 @@ ENV PATH="/root/miniconda3/bin:${PATH}"
 ARG PATH="/root/miniconda3/bin:${PATH}"
 
 RUN apt update \
-    && apt install -y htop python3-dev wget
+    && apt install -y htop python3-dev wget tmux
 
 RUN ["apt-get", "update"]
 RUN ["apt-get", "install", "-y", "vim"]
