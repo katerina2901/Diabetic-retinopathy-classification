@@ -11,4 +11,6 @@ Docker_test/
 .profile
 .tmux.conf
 dataset/
+dataset_loading/
+short_dataset/
 

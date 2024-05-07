@@ -9,4 +9,5 @@ torchvision
 scikit-image
 matplotlib
 pillow
+wandb
 nltk
