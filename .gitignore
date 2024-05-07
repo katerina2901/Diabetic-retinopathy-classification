@@ -13,4 +13,6 @@ Docker_test/
 dataset/
 dataset_loading/
 short_dataset/
-
+.ipynb_checkpoints/
+.viminfo
+VIT.ipynb

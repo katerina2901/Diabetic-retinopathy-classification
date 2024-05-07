@@ -19,7 +19,7 @@ RUN conda create -y -n virt_env python=3.6
 COPY . src/
 RUN /bin/bash -c "cd src \
     && source activate virt_env \
-    && pip install -r requirements_kaggle.txt \
+    && pip install -r requirements.txt \
     && jupyter notebook --generate-config \
     && cp /src/jupyter_notebook_config.py /root/.jupyter/jupyter_notebook_config.py"
  
