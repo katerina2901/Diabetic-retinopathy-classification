@@ -1,0 +1,2 @@
+Data augmentation is applied and minority classes are oversampled using SMOTE (majority class is not under-sampled).
+Train and Test datasets are created.
