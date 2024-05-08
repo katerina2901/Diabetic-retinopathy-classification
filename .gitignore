@@ -16,3 +16,5 @@ short_dataset/
 .ipynb_checkpoints/
 .viminfo
 VIT.ipynb
+models/vit-base/
+models/wandb/
