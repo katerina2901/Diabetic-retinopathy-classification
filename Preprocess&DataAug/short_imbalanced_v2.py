@@ -33,7 +33,6 @@ def load_dataset_path2images(dataset_folder_name):
 
 dataset = load_dataset_path2images(dataset_folder_name)
 
-
 # Datasets containing paths and labels
 train_dataset = dataset['train']
 test_dataset = dataset['test']
@@ -50,6 +49,11 @@ for class_index, group in train_dataset.groupby('label'):
     lst.append(group.sample(max_size - len(group), replace = True))
 train_dataset = pd.concat(lst)
 
+labels = set(train_dataset.label.values)
+label2id, id2label = dict(), dict()
+for i, label in enumerate(labels):
+    label2id[label] = str(i)
+    id2label[str(i)] = label
 
 # Processor Checkpoints
 model_name_or_path = 'google/vit-base-patch16-224-in21k'
