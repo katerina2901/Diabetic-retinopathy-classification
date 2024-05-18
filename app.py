@@ -7,7 +7,6 @@ from safetensors.torch import load_file
 
 app = Flask(__name__)
 
-# Определите абсолютный путь к директории с моделью
 model_dir = os.path.abspath("./saved_models/effNetb5_originpreprocessor_rt15")
 
 # Load the preprocessor
