@@ -6,4 +6,4 @@ torch==2.3.0
 torchvision==0.18.0
 transformers==4.40.2
 urllib3==1.26.14
-Werkzeug==2.0.2
+Werkzeug==2.2.2
