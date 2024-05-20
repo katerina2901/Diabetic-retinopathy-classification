@@ -1,4 +1,6 @@
 import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
+
 from flask import Flask, request, render_template
 import torch
 from PIL import Image
@@ -13,9 +15,9 @@ model_dir = os.path.abspath("./saved_models/effNetb5_originpreprocessor_rt15")
 preprocessor = EfficientNetImageProcessor.from_pretrained(model_dir)
 
 # Load the model config
-# config = EfficientNetForImageClassification.from_pretrained(model_dir).config
 config_path = os.path.join(model_dir, "config.json")
 config = EfficientNetForImageClassification.config_class.from_pretrained(config_path)
+
 # Initialize the model
 model = EfficientNetForImageClassification(config)
 
@@ -36,7 +38,6 @@ def predict():
         return 'No selected file'
     if file:
         image = Image.open(file.stream)
-        
         inputs = preprocessor(image, return_tensors="pt")
         
         with torch.no_grad():
