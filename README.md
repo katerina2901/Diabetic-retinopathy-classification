@@ -1,10 +1,9 @@
 # Diabetic-retinopathy-classification
 
 Install the required packages:
-
-    ```bash
+```bash
     pip install -r requirements.txt
-    ```
+```
 Running the Application
 
 1. Start the Flask development server:
