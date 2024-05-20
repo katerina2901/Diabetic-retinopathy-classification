@@ -11,9 +11,10 @@
             font-family: Arial, Helvetica, sans-serif;
         }
         .bg {
-            background-image: url('Diabetic_Retinopathy.jpg');
+            background-image: url('{{ url_for('static', filename='Diabetic_Retinopathy.jpg') }}');
             height: 100%;
-            background-position: center;
+            width: 100%;
+            background-position: center 30%;
             background-repeat: no-repeat;
             background-size: cover;
             display: flex;
@@ -26,6 +27,7 @@
             padding: 20px;
             border-radius: 10px;
             text-align: center;
+            margin-top: 50px;
         }
         .content h1 {
             margin-bottom: 20px;
@@ -54,11 +56,22 @@
                 <input type="file" name="file" accept="image/*" required>
                 <button type="submit">Upload</button>
             </form>
-            {% if label %}
-                <h2>Predicted Label: {{ label }}</h2>
+            {% if label is not none %}
+                {% if label == 0 %}
+                    <h2>No disease visible</h2>
+                {% elif label == 1 %}
+                    <h2>Mild nonproliferative diabetic retinopathy</h2>
+                {% elif label == 2 %}
+                    <h2>Moderate nonproliferative diabetic retinopathy</h2>
+                {% elif label == 3 %}
+                    <h2>Severe nonproliferative diabetic retinopathy</h2>
+                {% elif label == 4 %}
+                    <h2>Proliferative diabetic retinopathy</h2>
+                {% else %}
+                    <h2>Unknown stage</h2>
+                {% endif %}
             {% endif %}
         </div>
     </div>
 </body>
 </html>
-
