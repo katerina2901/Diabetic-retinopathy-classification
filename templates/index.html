@@ -9,43 +9,70 @@
             height: 100%;
             margin: 0;
             font-family: Arial, Helvetica, sans-serif;
+            background-color: rgb(0, 0, 0);
+            color: rgba(249, 180, 50, 0.924);
         }
         .bg {
-            background-image: url('{{ url_for('static', filename='Diabetic_Retinopathy.jpg') }}');
             height: 100%;
             width: 100%;
-            background-position: center 30%;
-            background-repeat: no-repeat;
-            background-size: cover;
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
         }
         .content {
-            background: rgba(255, 255, 255, 0.8);
+            background:  rgba(255, 255, 255, 0.0);
             padding: 20px;
             border-radius: 10px;
             text-align: center;
             margin-top: 50px;
+            max-width: 1200px;
         }
         .content h1 {
-            margin-bottom: 20px;
+            margin-bottom: 26px;
         }
         .content form {
             margin-bottom: 20px;
         }
         .content button {
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            color: white;
+            padding: 15px 20px;
+            background-color: rgba(255, 140, 0, 0.8);
+            color: black;
             border: none;
             border-radius: 5px;
             cursor: pointer;
         }
-        .content button:hover {
-            background-color: #45a049;
+        .content button:hover, hover  {
+            background-color: rgba(255, 140, 0, 0.8);
         }
+        .results-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .image-container, .plot-container {
+            flex: 1;
+            text-align: center;
+            margin: 10px;
+        }
+        .uploaded-image {
+            max-width: 100%;  
+            height: 100%;
+            width: 800px;
+        }
+        .new-image{
+            max-width: 100%;  
+            height: 100%;
+            width: 1600px;
+        }
+        .plot-image {
+            max-width: 100%;  
+            height: 100%;
+            width: 1600px; 
+            height: auto; 
+        }
+
     </style>
 </head>
 <body lang="en">
@@ -56,23 +83,39 @@
                 <input type="file" name="file" accept="image/*" required>
                 <button type="submit">Upload</button>
             </form>
-            {% if label is not none %}
-                {% if label == 0 %}
-                    <h2>No disease visible</h2>
-                {% elif label == 1 %}
-                    <h2>Mild nonproliferative diabetic retinopathy</h2>
-                {% elif label == 2 %}
-                    <h2>Moderate nonproliferative diabetic retinopathy</h2>
-                {% elif label == 3 %}
-                    <h2>Severe nonproliferative diabetic retinopathy</h2>
-                {% elif label == 4 %}
-                    <h2>Proliferative diabetic retinopathy</h2>
-                {% else %}
-                    <h2>Unknown stage</h2>
-                {% endif %}
+            {% if label is defined %}
+                <div id="results">
+                    <h2>Predicted stage: </h2>
+                    {% if label == 0 %}
+                        <h3>No disease visible</h3>
+                    {% elif label == 1 %}
+                        <h3>Mild nonproliferative diabetic retinopathy</h3>
+                    {% elif label == 2 %}
+                        <h3>Moderate nonproliferative diabetic retinopathy</h3>
+                    {% elif label == 3 %}
+                        <h3>Severe nonproliferative diabetic retinopathy</h3>
+                    {% elif label == 4 %}
+                        <h3>Proliferative diabetic retinopathy</h3>
+                    {% else %}
+                        <h3>Unknown stage</h3>
+                    {% endif %}
+                    <div class="results-container">
+                        <div class="image-container">
+                            <h3>Uploaded Image:</h3>
+                            <img src="data:image/jpeg;base64,{{ image_data }}" alt="Uploaded Image" class="uploaded-image">
+                        </div>
+                        <div class="image-container">
+                            <h3>Attention Image:</h3>
+                            <img src="data:image/jpeg;base64,{{ image_data }}" alt="Attention Image" class="new-image">
+                        </div>
+                        <div class="plot-container">
+                            <h3>Stage Probabilities:</h3>
+                            <img src="data:image/png;base64,{{ plot_data }}" alt="Class Probabilities" class="plot-image">
+                        </div>
+                    </div>
+                </div>
             {% endif %}
         </div>
     </div>
 </body>
 </html>
-
