@@ -104,7 +104,7 @@ class Spot(object):
 
         k = 14 / 25 + (1.0 - self.radius / 25) # Calculate intensity factor
         beta = 0.5 + (1.5 - 0.5) * self.radius / 25 # Calculate intensity decay factor
-        A = k * self.ones.clone() $ Initialize the intensity tensor
+        A = k * self.ones.clone() # Initialize the intensity tensor
         d = 0.3 * self.radius / 25
         t = np.exp(-beta * d) # Calculate exponential decay
 
@@ -271,7 +271,7 @@ from PIL import ImageEnhance
 
 # Randomly sharpen the images
 def RandomSharpen(image, alpha = 0.2, probability = 0.5):
-    Randomly sharpen image based on probability
+    # Randomly sharpen image based on probability
     if random.random() <= probability:
         sharpener = ImageEnhance.Sharpness(image) # Create sharpener object
         factor = 0.5  # Sharpening factor
@@ -280,7 +280,7 @@ def RandomSharpen(image, alpha = 0.2, probability = 0.5):
         # Return sharpened image
         return image
     else:
-    return image
+        return image
 
 
 # Crop images from center with particular size
