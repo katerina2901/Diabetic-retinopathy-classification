@@ -6,24 +6,25 @@ This repository contains code for Final Project of DL Course at Skoltech.
 
 ```bash
 Project
-├── app # folder to run web page
+├── app/ # folder to run web page
+│   ├── templates/ # folder for web page templates
+│   │    ├── index.html # for styles 
 │   ├── app.py # file to run web page
+│   ├── utils.py # file for utils
+│   ├── Validation.py # file for attention map validation and plotting
 │   └── requirements.txt # requirements to run app.py
 ├── results #  folder with plots
-├── README.md
+├── notebooks/ # folder with models and validation notebook
+│   ├── FastViT.ipynb
+│   ├── IfficientNet.ipynb
+│   ├── MedVIT.ipynb
+│   ├── MedVIT_ECA.ipynb # MedViT with channel attention
+│   ├── Swin.ipynb # SwinV2 model
+│   ├── Validation test.ipynb
+│   ├── ViT.ipynb
+│   └── utils.py
+└── README.md
 
-
-
-├── results # results of expirements
-│   ├── 1st_experiment_base_estimators.csv # contain 1st_experiment best results for all datasets
-│   ├── 2nd_experiment_preprocessors.csv # contain 2st_experiment all results for all datasets
-│   ├──  3rd_experiment-preprocessors_all.zip # contain 3rd_experiment all results for all datasets
-│   ├── baseline_best_algorithms.csv # contain baseline best results for all datasets
-│   ├── baseline_experiment.csv # contain baseline results for models without hyperparameter tuning
-│   ├── best_algorithm_preprocessor_summary.csv # contain 3 st_experiment best results for all datasets
-│   └── final_result.csv # contain a comparison of the best results from all experiments for all datasets
-├── README.md
-└── dataset_loader.py # function for loading dataset from UCI Machine Learning Repository
 ```
 ## 2. Project description
 
@@ -102,41 +103,103 @@ then class 1 vs. classes 2,3,4, etc.
 
 
 ## 3. Datasets
-Train models on [EyePACS dataset](https://www.kaggle.com/c/diabetic-retinopathy-detection/overview)  - 88k retinal images
+* Train models on [EyePACS dataset](https://www.kaggle.com/c/diabetic-retinopathy-detection/overview)  - 88k retinal images
+```bash
+kaggle competitions download -c diabetic-retinopathy-detection
+```
+* Validate models on [DDR dataset](https://github.com/nkicsl/DDR-dataset)  - 14k retinal images
 
-Validate models on [DDR dataset](https://github.com/nkicsl/DDR-dataset)  - 14k retinal images
+One can dowload from [google disk](https://drive.google.com/drive/folders/1z6tSFmxW_aNayUqVxx6h6bY4kwGzUTEC)
 
 ## 4. Results
+
+[Here](notebooks/Validation/test.ipynb) one can run validation file with models trained on DDR dataset.
+
 
 ![image](https://github.com/katerina2901/Diabetic-retinopathy-classification/assets/133007241/cab074b4-5a36-4eb0-8357-30f3b36434de)
 
 
 | Model             | Kappa         | F1    | Accuracy |
 | ------------------|:-------------:| -----:|---------:|
-| MedViT            | 0.711         | 0.793 | 0.786    |       
-| MedViT + attention| 0.637         | 0.734 | 0.729    |
-| FasterViT         | 0.774         | 0.767 | 0.753    | 
-| SwinV2            | 0.751         | 0.806 | 0.809    | 
-| EffNetb5          | 0.737         | 0.766 | 0.767    |
+| MedViT            | 0.772         | ${\color{red}0.717}$ | 0.707    |       
+| MedViT + attention| 0.716         | 0.669 | 0.662    |
+| SwinV2            | ${\color{red}0.785}$         | ${\color{red}0.717}$ | 0.711   | 
+| EffNetb5          | 0.726         | 0.711 | ${\color{red}0.711}$    |
+
+
 
 ## 5. Running the Application
-
-Install the required packages:
+Go inside `app` folder 
 ```bash
-    pip install -r requirements.txt
+cd app
+```
+install the required packages:
+```bash
+pip install -r requirements.txt
+```
+
+**Inside** `app` folder clone MedVIT repository:
+```bash
+git clone https://github.com/Omid-Nejati/MedViT.git
 ```
 
 1. Start the Flask development server:
 
-    ```bash
-    python app.py
-    ```
-2. Open your web browser and go to [http://127.0.0.1:5000/](http://127.0.0.1:5000/) to access the application.
+```bash
+python app.py
+```
+2. Open your web browser and go to [http://127.0.0.1:8893/](http://127.0.0.1:8893/) to access the application (by default 8893 PORT is used).
    - **Upload an Image**: Click the "Choose File" button and select an image of an eye to upload.
    - **Submit the Image**: Click the "Upload" button to submit the image.
    - **View Results**: The application will display the predicted stage of diabetic retinopathy.
 
-## 5. Requirements
+## 6. Requirements
+
+## 7. References
+<a id="1">[1]</a> 
+J. W. C. Emma Dugas, Jared, “Diabetic
+retinopathy detection,” 2015
+
+<a id="1">[2]</a> 
+T. Li, Y. Gao, K. Wang, S. Guo, H. Liu, and
+H. Kang, “Diagnostic assessment of deep learn-
+ing algorithms for diabetic retinopathy screening,”
+Information Sciences, vol. 501, pp. 511 – 522,
+2019
+
+<a id="1">[3]</a> 
+Chetoui, M. and Akhloufi, M. A. Explain-
+able end-to-end deep learning for diabetic retinopa-
+thy detection across multiple datasets. J Med Imag-
+ing (Bellingham).
+
+<a id="1">[4]</a> 
+Huang, Y., Lyu, J., Cheng, P., Tam, R., and
+Tang, X. Ssit: Saliency-guided self-supervised im-
+age transformer for diabetic retinopathy grading.
+IEEE Journal of Biomedical and Health Informat-
+ics, 2024.
+
+<a id="1">[5]</a> 
+Manzari, O. N., Ahmadabadi, H., Kashiani,
+H., Shokouhi, S. B., and Ayatollahi, A. Medvit: A
+robust vision transformer for generalized medical
+image classification. Computers in Biology and
+Medicine, 157:106791, 2023.
+
+
+<a id="1">[6]</a> 
+Sun, R., Li, Y., Zhang, T., Mao, Z., Wu,
+F., and Zhang, Y. Lesion-aware transformers for
+diabetic retinopathy grading. pp. 10933–10942,
+2021.
+
+<a id="1">[7]</a> 
+Uysal, E. S., Safak Bilici, M., Zaza, B. S.,
+Ozgenc, M. Y., and Boyar, O. Exploring the limits
+of data augmentation for retinal vessel segmenta-
+tion, 2021.
+
 
 
 
