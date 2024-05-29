@@ -108,6 +108,9 @@ Validate models on [DDR dataset](https://github.com/nkicsl/DDR-dataset)  - 14k r
 
 ## 4. Results
 
+[Here](notebooks/Validation/test.ipynb) one can run validation file with models trained on DDR dataset.
+
+
 ![image](https://github.com/katerina2901/Diabetic-retinopathy-classification/assets/133007241/cab074b4-5a36-4eb0-8357-30f3b36434de)
 
 
@@ -118,6 +121,8 @@ Validate models on [DDR dataset](https://github.com/nkicsl/DDR-dataset)  - 14k r
 | FasterViT         | 0.774         | 0.767 | 0.753    | 
 | SwinV2            | 0.751         | 0.806 | 0.809    | 
 | EffNetb5          | 0.737         | 0.766 | 0.767    |
+
+
 
 ## 5. Running the Application
 
@@ -136,7 +141,53 @@ Install the required packages:
    - **Submit the Image**: Click the "Upload" button to submit the image.
    - **View Results**: The application will display the predicted stage of diabetic retinopathy.
 
-## 5. Requirements
+## 6. Requirements
+
+## 7. References
+<a id="1">[1]</a> 
+J. W. C. Emma Dugas, Jared, “Diabetic
+retinopathy detection,” 2015
+
+<a id="1">[2]</a> 
+T. Li, Y. Gao, K. Wang, S. Guo, H. Liu, and
+H. Kang, “Diagnostic assessment of deep learn-
+ing algorithms for diabetic retinopathy screening,”
+Information Sciences, vol. 501, pp. 511 – 522,
+2019
+
+<a id="1">[3]</a> 
+Chetoui, M. and Akhloufi, M. A. Explain-
+able end-to-end deep learning for diabetic retinopa-
+thy detection across multiple datasets. J Med Imag-
+ing (Bellingham).
+
+<a id="1">[4]</a> 
+Huang, Y., Lyu, J., Cheng, P., Tam, R., and
+Tang, X. Ssit: Saliency-guided self-supervised im-
+age transformer for diabetic retinopathy grading.
+IEEE Journal of Biomedical and Health Informat-
+ics, 2024.
+
+<a id="1">[5]</a> 
+Manzari, O. N., Ahmadabadi, H., Kashiani,
+H., Shokouhi, S. B., and Ayatollahi, A. Medvit: A
+robust vision transformer for generalized medical
+image classification. Computers in Biology and
+Medicine, 157:106791, 2023.
+
+
+<a id="1">[6]</a> 
+Sun, R., Li, Y., Zhang, T., Mao, Z., Wu,
+F., and Zhang, Y. Lesion-aware transformers for
+diabetic retinopathy grading. pp. 10933–10942,
+2021.
+
+<a id="1">[7]</a> 
+Uysal, E. S., Safak Bilici, M., Zaza, B. S.,
+Ozgenc, M. Y., and Boyar, O. Exploring the limits
+of data augmentation for retinal vessel segmenta-
+tion, 2021.
+
 
 
 
