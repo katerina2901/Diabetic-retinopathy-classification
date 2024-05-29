@@ -191,10 +191,10 @@ def calculate_per_class_accuracy(confusion_matrix):
 
         return per_class_accuracy
 
-def get_compute_metrics(pretrained_model_name, dataset_name):
+def get_compute_metrics(pretrained_model_name, dataset_name, save_cm=True):
 
     def compute_metrics(eval_pred):
-        
+        save_cm_fn = save_cm
         predictions_proba, labels = eval_pred
         predictions = np.argmax(predictions_proba, axis=1)
         predictions = np.clip(predictions, 0, 4)
@@ -219,8 +219,9 @@ def get_compute_metrics(pretrained_model_name, dataset_name):
                 'class_4' : perclass_acc[4],
                 }
         
-        plot_confusion_matrix(labels, predictions, normalize=True,
-                        title='Normalized confusion matrix', file_name=f'{pretrained_model_name}_{dataset_name}')
+        if save_cm:
+            plot_confusion_matrix(labels, predictions, normalize=True,
+                            title='Normalized confusion matrix', file_name=f'{pretrained_model_name}_{dataset_name}')
 
         return result
 
