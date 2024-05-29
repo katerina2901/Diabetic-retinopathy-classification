@@ -97,9 +97,13 @@ then class 1 vs. classes 2,3,4, etc.
 
 
 ## 3. Datasets
-Train models on [EyePACS dataset](https://www.kaggle.com/c/diabetic-retinopathy-detection/overview)  - 88k retinal images
+* Train models on [EyePACS dataset](https://www.kaggle.com/c/diabetic-retinopathy-detection/overview)  - 88k retinal images
+```bash
+kaggle competitions download -c diabetic-retinopathy-detection
+```
+* Validate models on [DDR dataset](https://github.com/nkicsl/DDR-dataset)  - 14k retinal images
 
-Validate models on [DDR dataset](https://github.com/nkicsl/DDR-dataset)  - 14k retinal images
+One can dowload from [google disk](https://drive.google.com/drive/folders/1z6tSFmxW_aNayUqVxx6h6bY4kwGzUTEC)
 
 ## 4. Results
 
