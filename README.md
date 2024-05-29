@@ -14,10 +14,16 @@ Project
 │   ├── Validation.py # file for attention map validation and plotting
 │   └── requirements.txt # requirements to run app.py
 ├── results #  folder with plots
-├── README.md
-
-
-
+├── notebooks/ # folder with models and validation notebook
+│   ├── FastViT.ipynb
+│   ├── IfficientNet.ipynb
+│   ├── MedVIT.ipynb
+│   ├── MedVIT_ECA.ipynb # MedViT with channel attention
+│   ├── Swin.ipynb # SwinV2 model
+│   ├── Validation test.ipynb
+│   ├── ViT.ipynb
+│   └── utils.py
+└── README.md
 
 ```
 ## 2. Project description
