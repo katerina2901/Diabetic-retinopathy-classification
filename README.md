@@ -111,11 +111,10 @@ Validate models on [DDR dataset](https://github.com/nkicsl/DDR-dataset)  - 14k r
 
 | Model             | Kappa         | F1    | Accuracy |
 | ------------------|:-------------:| -----:|---------:|
-| MedViT            | 0.711         | 0.793 | 0.786    |       
-| MedViT + attention| 0.637         | 0.734 | 0.729    |
-| FasterViT         | ${\color{red}0.774}$         | 0.767 | 0.753    | 
-| SwinV2            | 0.751         | ${\color{red}0.806}$ | ${\color{red}0.809}$    | 
-| EffNetb5          | 0.737         | 0.766 | 0.767    |
+| MedViT            | 0.772         | ${\color{red}0.717}$ | 0.707    |       
+| MedViT + attention| 0.716         | 0.669 | 0.662    |
+| SwinV2            | ${\color{red}0.785}$         | ${\color{red}0.717}$ | 0.711   | 
+| EffNetb5          | 0.726         | 0.711 | ${\color{red}0.711}$    |
 
 
 
