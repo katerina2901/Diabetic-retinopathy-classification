@@ -197,7 +197,11 @@ def get_compute_metrics(pretrained_model_name, dataset_name):
         
         predictions_proba, labels = eval_pred
         predictions = np.argmax(predictions_proba, axis=1)
+        predictions = np.clip(predictions, 0, 4)
         result_accuracy = accuracy.compute(predictions=predictions, references=labels)
+
+        if predictions_proba.shape[1] > 1:  # Check if we have more than one class
+            predictions_proba = torch.nn.functional.softmax(torch.tensor(predictions_proba), dim=-1).numpy()
 
         cm = confusion_matrix(labels, predictions)
         perclass_acc = calculate_per_class_accuracy(cm)
@@ -206,6 +210,7 @@ def get_compute_metrics(pretrained_model_name, dataset_name):
                 'accuracy': np.mean([result_accuracy['accuracy']]),
                 'kappa': np.mean([cohen_kappa_score(labels, predictions, weights = "quadratic")]),
                 'f1': np.mean([f1_score(labels, predictions, average='weighted')]),
+                # 'roc_auc': np.mean([roc_auc_score(labels, predictions_proba, multi_class='ovr')]),
                 'roc_auc': np.mean([roc_auc_score(labels, predictions_proba, multi_class='ovr')]),
                 'class_0' : perclass_acc[0],
                 'class_1' : perclass_acc[1],

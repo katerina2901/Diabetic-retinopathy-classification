@@ -21,4 +21,5 @@ fvcore
 tqdm
 fire
 torchattacks
+fastervit
 
