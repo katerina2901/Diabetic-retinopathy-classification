@@ -118,8 +118,8 @@ Validate models on [DDR dataset](https://github.com/nkicsl/DDR-dataset)  - 14k r
 | ------------------|:-------------:| -----:|---------:|
 | MedViT            | 0.711         | 0.793 | 0.786    |       
 | MedViT + attention| 0.637         | 0.734 | 0.729    |
-| FasterViT         | 0.774         | 0.767 | 0.753    | 
-| SwinV2            | 0.751         | 0.806 | 0.809    | 
+| FasterViT         | ${\color{red}0.774}$         | 0.767 | 0.753    | 
+| SwinV2            | 0.751         | ${\color{red}0.806}$ | ${\color{red}0.809}$    | 
 | EffNetb5          | 0.737         | 0.766 | 0.767    |
 
 
