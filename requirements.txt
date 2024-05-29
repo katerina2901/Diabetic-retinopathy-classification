@@ -11,4 +11,14 @@ urllib3==1.26.14
 Werkzeug==3.0.3 #or Werkzeug==2.2.2
 tensorflow==2.16.1
 torchvision==0.18.0
+einops
+timm
+medmnist
+pandas
+scikit-learn
+scikit-image
+fvcore
+tqdm
+fire
+torchattacks
 
