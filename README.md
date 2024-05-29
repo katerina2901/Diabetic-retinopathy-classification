@@ -120,21 +120,25 @@ Validate models on [DDR dataset](https://github.com/nkicsl/DDR-dataset)  - 14k r
 
 
 ## 5. Running the Application
-Go to the `app` folder and install the required packages:
+Go inside `app` folder 
 ```bash
-    pip install -r requirements.txt
+cd app
+```
+install the required packages:
+```bash
+pip install -r requirements.txt
 ```
 
-Go to the `app` folder and **INSIDE** clone MedVIT repository:
+**Inside** `app` folder clone MedVIT repository:
 ```bash
-!git clone https://github.com/Omid-Nejati/MedViT.git
+git clone https://github.com/Omid-Nejati/MedViT.git
 ```
 
 1. Start the Flask development server:
 
-    ```bash
-    python app.py
-    ```
+```bash
+python app.py
+```
 2. Open your web browser and go to [http://127.0.0.1:8893/](http://127.0.0.1:8893/) to access the application (by default 8893 PORT is used).
    - **Upload an Image**: Click the "Choose File" button and select an image of an eye to upload.
    - **Submit the Image**: Click the "Upload" button to submit the image.
