@@ -8,7 +8,11 @@ This repository contains code for Final Project of DL Course at Skoltech.
 Project
 ├── app # folder to run web page
 │   ├── app.py # file to run web page
+│   ├── utils.py # file for utils
+│   ├── Validation.py # file for attention map validation and plotting
 │   └── requirements.txt # requirements to run app.py
+│   ├── templates # folder for web page templates
+│   ├── ├── index.html # for styles 
 ├── results #  folder with plots
 ├── README.md
 
@@ -116,10 +120,14 @@ Validate models on [DDR dataset](https://github.com/nkicsl/DDR-dataset)  - 14k r
 
 
 ## 5. Running the Application
-
-Install the required packages:
+Go to the `app` folder and install the required packages:
 ```bash
     pip install -r requirements.txt
+```
+
+Go to the `app` folder and **INSIDE** clone MedVIT repository:
+```bash
+!git clone https://github.com/Omid-Nejati/MedViT.git
 ```
 
 1. Start the Flask development server:
@@ -127,7 +135,7 @@ Install the required packages:
     ```bash
     python app.py
     ```
-2. Open your web browser and go to [http://127.0.0.1:5000/](http://127.0.0.1:5000/) to access the application.
+2. Open your web browser and go to [http://127.0.0.1:8893/](http://127.0.0.1:8893/) to access the application (by default 8893 PORT is used).
    - **Upload an Image**: Click the "Choose File" button and select an image of an eye to upload.
    - **Submit the Image**: Click the "Upload" button to submit the image.
    - **View Results**: The application will display the predicted stage of diabetic retinopathy.
