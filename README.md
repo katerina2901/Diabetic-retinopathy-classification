@@ -4,37 +4,6 @@ This repository contains code for Final Project of DL Course at Skoltech.
 
 ## Repository structure
 
-Project
-├── app.py # File for running application
-├── Experiments 
-│   ├── baseline.py # repeat experiments from main paper with boosting methods
-│   ├── 1st_experiment_base_estimators.py # experiments with different base estimators
-│   ├── 2st_experiment_preprocessors.py # experiments with different preprocessing operators
-│   └── 3st_experiment_resampling.py # experiments with using data-level approach resampling methods
-├── Metrics 
-│   ├── all_metrics_append.py # function for evaluating all metrics
-│   └── all_metrics_tables.py # function for pritning metrics in tables
-├── Datasets # Dataset from UCI Machine Learning Repository that can't be imported in python
-│   ├── hayes_roth.data
-│   ├── new-thyroid.data
-│   ├── page_blocks.data
-│   ├── shuttle.trn
-│   ├── shuttle.tst
-│   └── vertebral.dat
-├── report # report deliverables
-│   ├── presentation.pdf
-│   └── report.pdf
-├── results # results of expirements
-│   ├── 1st_experiment_base_estimators.csv # contain 1st_experiment best results for all datasets
-│   ├── 2nd_experiment_preprocessors.csv # contain 2st_experiment all results for all datasets
-│   ├──  3rd_experiment-preprocessors_all.zip # contain 3rd_experiment all results for all datasets
-│   ├── baseline_best_algorithms.csv # contain baseline best results for all datasets
-│   ├── baseline_experiment.csv # contain baseline results for models without hyperparameter tuning
-│   ├── best_algorithm_preprocessor_summary.csv # contain 3 st_experiment best results for all datasets
-│   └── final_result.csv # contain a comparison of the best results from all experiments for all datasets
-├── README.md
-└── dataset_loader.py # function for loading dataset from UCI Machine Learning Repository
-
 ## Project description
 
 Diabetic retinopathy is a serious complication of 
@@ -56,7 +25,15 @@ make it even more difficult. Therefore, we employ some of the deep learning algo
 which to achieve this goal i.e., CNN, ViT, and hybrid schemes (CNN plus ViT); for example, models
 as FasterViT, MedViT, EfficientNet, SwinV2, etc
 
+## Results
 
+| Model             | Kappa         | F1    | Accuracy |
+| ------------------|:-------------:| -----:|---------:|
+| MedViT            | 0.711         | 0.793 | 0.786    |       
+| MedViT + attention| 0.637         | 0.734 | 0.729    |
+| FasterViT         | 0.774         | 0.767 | 0.753    | 
+| SwinV2            | 0.751         | 0.806 | 0.809    | 
+| EffNetb5          | 0.737         | 0.766 | 0.767    |
 
 ## Running the Application
 
