@@ -1,6 +1,6 @@
 # Diabetic-retinopathy-classification
 
-This repository contains code for Final Project of ML Course in Skoltech.
+This repository contains code for Final Project of DL Course at Skoltech.
 
 Install the required packages:
 ```bash
@@ -20,20 +20,17 @@ and determining the severity of the disease with
 high reliability is highly awaited. Therefore, the
 main goal of this study is to develop an effective
 approach to classify diabetic retinopathy in patients
-based on retinal images of eyes, which is a chal-
-lenging task in itself. Due to the spherical shape
+based on retinal images of eyes, which is a challenging task in itself. Due to the spherical shape
 of the eye with unequal distribution of luminosity,
 contrast and small lesions, along with the presence
 of alike features in healthy and non-healthy retinas,
-make it even more difficult. Therefore, we em-
-ploy some of the deep learning algorithms/methods
-which to achieve this goal i.e., CNN, ViT, and hy-
-brid schemes (CNN plus ViT); for example, models
+make it even more difficult. Therefore, we employ some of the deep learning algorithms/methods
+which to achieve this goal i.e., CNN, ViT, and hybrid schemes (CNN plus ViT); for example, models
 as FasterViT, MedViT, EfficientNet, SwinV2, etc
 
 
 
-Running the Application
+## Running the Application
 
 1. Start the Flask development server:
 
