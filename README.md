@@ -25,7 +25,16 @@ make it even more difficult. Therefore, we employ some of the deep learning algo
 which to achieve this goal i.e., CNN, ViT, and hybrid schemes (CNN plus ViT); for example, models
 as FasterViT, MedViT, EfficientNet, SwinV2, etc
 
+## Datasets
+Train models on [EyePACS dataset](https://www.kaggle.com/c/diabetic-retinopathy-detection/overview)  - 88k retinal images
+
+Validate models on [DDR dataset](https://github.com/nkicsl/DDR-dataset)  - 14k retinal images
+
+
 ## Results
+
+![image](https://github.com/katerina2901/Diabetic-retinopathy-classification/assets/133007241/cab074b4-5a36-4eb0-8357-30f3b36434de)
+
 
 | Model             | Kappa         | F1    | Accuracy |
 | ------------------|:-------------:| -----:|---------:|
