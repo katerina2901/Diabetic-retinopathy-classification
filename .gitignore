@@ -1,3 +1,6 @@
 dr_env/
 MedViT/
 saved_models/
+DR_grading/
+notebooks/__pycache__
+notebooks/MedViT-base_test
