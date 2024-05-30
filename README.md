@@ -47,6 +47,16 @@ make it even more difficult. Therefore, we employ some of the deep learning algo
 which to achieve this goal i.e., CNN, ViT, and hybrid schemes (CNN plus ViT); for example, models
 as FasterViT, MedViT, EfficientNet, SwinV2, etc
 
+<img src="https://github.com/katerina2901/Diabetic-retinopathy-classification/assets/133007241/f0bb5130-132c-4f22-91f5-f98b73af4309" width="300" height="300" /> 
+
+<img src="https://github.com/katerina2901/Diabetic-retinopathy-classification/assets/133007241/d524f20b-7cc7-4141-877e-4d3523782bde" width="300" height="300" />
+
+<img src="https://github.com/katerina2901/Diabetic-retinopathy-classification/assets/133007241/3652c380-1624-4ddd-a5a3-3c47a2123a75" width="300" height="300" />
+
+
+
+
+
 ### 2.1 [Preprocessing](data_utils.py) 
 
 The preprocessing steps involved several stages:
