@@ -7,10 +7,13 @@ This repository contains code for Final Project of DL Course at Skoltech.
 ```bash
 Project
 ├── app/ # folder to run web page
+│   ├── sample/ # folder for images for testing app
+│   │    ├── sample.txt # true classes for images
 │   ├── templates/ # folder for web page templates
 │   │    ├── index.html # for styles 
 │   ├── app.py # file to run web page
 │   ├── utils.py # file for utils
+│   ├── data_utils.py # file for data utils
 │   ├── Validation.py # file for attention map validation and plotting
 │   └── requirements.txt # requirements to run app.py
 ├── results #  folder with plots
