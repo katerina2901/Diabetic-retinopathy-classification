@@ -1,7 +1,7 @@
 # Diabetic-retinopathy-classification
 
 This repository contains code for Final Project of DL Course at Skoltech. 
-[Presentation](https://docs.google.com/presentation/d/1wmq_kcR5ZHyGy92ATxgsvbva5XzSr4eP7QFokgnFFhs/edit#slide=id.g2e1156462da_0_1)
+[Presentation](https://docs.google.com/presentation/d/1wmq_kcR5ZHyGy92ATxgsvbva5XzSr4eP7QFokgnFFhs/edit#slide=id.p1)
 
 ## 1. Repository structure
 
