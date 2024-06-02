@@ -1,0 +1,5 @@
+sample/13_left.jpeg	0
+sample/2359_right.jpeg	1
+sample/1032_left.jpeg	2
+sample/6878_right.jpeg	3
+sample/16_left.jpeg	4

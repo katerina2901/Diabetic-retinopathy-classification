@@ -15,7 +15,9 @@ from PIL import Image
 from transformers import AutoImageProcessor
 from safetensors.torch import load_file
 from io import BytesIO
+import torchvision.transforms as T
 from Validation import MedViTConfig, MedViTClassification, extract_attention_map, plot_attention_map
+from data_utils import CenterCrop
 
 sys.path.append(os.path.abspath('./MedViT'))
 
@@ -37,15 +39,12 @@ app = Flask(__name__)
 model_dir = os.path.abspath("./Project_inference/MedViT512_tr35_stage6(3)_CCropSpot2HTrivAug_fastvitprepr_lr1e5")
 # Image processor load
 preprocessor = AutoImageProcessor.from_pretrained(model_dir)
+_transforms_test = T.Compose([CenterCrop()])
 preprocessor.size['height'] = 512
 preprocessor.size['width'] = 512
 
 # Load the model configuration and initialize the model
-config = MedViTConfig.from_pretrained(os.path.join(model_dir, "config.json"))
-model = MedViTClassification(config, pretrained=True)
-model_weights = load_file(os.path.join(model_dir, "model.safetensors"))
-model.load_state_dict(model_weights, strict=False)
-model.eval()
+model = MedViTClassification.from_pretrained(f'./Project_inference/MedViT512_tr35_stage6(3)_CCropSpot2HTrivAug_fastvitprepr_lr1e5')
 
 device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 model.to(device)
@@ -61,10 +60,11 @@ def predict():
     file = request.files['file']
     if file.filename == '':
         return 'No selected file'
-    if file:
-        image = Image.open(file.stream)
+   if file:
+        image = Image.open(file.stream).convert("RGB")
+        image = _transforms_test(image)
         inputs = preprocessor(image, return_tensors="pt").to(device)
-        
+
         with torch.no_grad():
             outputs = model(**inputs)
             logits = outputs['logits']

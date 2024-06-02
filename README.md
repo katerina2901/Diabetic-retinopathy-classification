@@ -1,16 +1,20 @@
 # Diabetic-retinopathy-classification
 
-This repository contains code for Final Project of DL Course at Skoltech.
+This repository contains code for Final Project of DL Course at Skoltech. 
+[Presentation](https://docs.google.com/presentation/d/1wmq_kcR5ZHyGy92ATxgsvbva5XzSr4eP7QFokgnFFhs/edit#slide=id.p1)
 
 ## 1. Repository structure
 
 ```bash
 Project
 ├── app/ # folder to run web page
+│   ├── sample/ # folder for images for testing app
+│   │    ├── sample.txt # true classes for images
 │   ├── templates/ # folder for web page templates
 │   │    ├── index.html # for styles 
 │   ├── app.py # file to run web page
 │   ├── utils.py # file for utils
+│   ├── data_utils.py # file for data utils
 │   ├── Validation.py # file for attention map validation and plotting
 │   └── requirements.txt # requirements to run app.py
 ├── results #  folder with plots
@@ -47,6 +51,12 @@ make it even more difficult. Therefore, we employ some of the deep learning algo
 which to achieve this goal i.e., CNN, ViT, and hybrid schemes (CNN plus ViT); for example, models
 as FasterViT, MedViT, EfficientNet, SwinV2, etc
 
+
+<img src="https://github.com/katerina2901/Diabetic-retinopathy-classification/assets/133007241/d524f20b-7cc7-4141-877e-4d3523782bde" width="300" height="300" />
+
+<img src="https://github.com/katerina2901/Diabetic-retinopathy-classification/assets/133007241/3652c380-1624-4ddd-a5a3-3c47a2123a75" width="300" height="300" />
+
+
 ### 2.1 [Preprocessing](data_utils.py) 
 
 The preprocessing steps involved several stages:
@@ -60,6 +70,13 @@ the model’s robustness to classify healthy or
 disease severity level on unseen dataset, we
 considered randomly adding spots, halos, and
 holes on images (after transforms).
+
+<img src="https://github.com/katerina2901/Diabetic-retinopathy-classification/assets/133007241/8b545b44-6950-4aa8-bf2c-46f694738e43" width="200" height="200"/>
+<img src="https://github.com/katerina2901/Diabetic-retinopathy-classification/assets/133007241/c1184f09-09fa-4520-84be-8f69a1a47743" width="200" height="200" />
+<img src="https://github.com/katerina2901/Diabetic-retinopathy-classification/assets/133007241/3ba65b59-5f61-4194-8ad2-2bad2a8eae0e" width="200" height="200" />
+<img src="https://github.com/katerina2901/Diabetic-retinopathy-classification/assets/133007241/bb0bd76e-feeb-4ff9-8884-5f6d423163bd" width="200" height="200" />
+
+ 
 
 ### 2.2 Models
 The following models were implemented:
@@ -114,17 +131,20 @@ One can dowload from [google disk](https://drive.google.com/drive/folders/1z6tSF
 ## 4. Results
 
 [Here](notebooks/Validation/test.ipynb) one can run validation file with models trained on DDR dataset.
-
-
 ![image](https://github.com/katerina2901/Diabetic-retinopathy-classification/assets/133007241/cab074b4-5a36-4eb0-8357-30f3b36434de)
 
 
-| Model             | Kappa         | F1    | Accuracy |
-| ------------------|:-------------:| -----:|---------:|
-| MedViT            | 0.772         | ${\color{red}0.717}$ | 0.707    |       
-| MedViT + attention| 0.716         | 0.669 | 0.662    |
-| SwinV2            | ${\color{red}0.785}$         | ${\color{red}0.717}$ | 0.711   | 
-| EffNetb5          | 0.726         | 0.711 | ${\color{red}0.711}$    |
+
+MedViR with Channel attention. Covarience matrixes for other configurations can be found [here](results/).
+<img src="results/conf_matrix_MedViTAtt_to512_tr35_stage3(5)_selfpretrained_2_DDR.png" width="500" height="400" /> 
+
+
+   | Model             | Kappa         | F1    | Accuracy |
+   | ------------------|:-------------:| -----:|---------:|
+   | MedViT            | 0.772         | ${\color{red}0.717}$ | 0.707    |       
+   | MedViT + attention| 0.716         | 0.669 | 0.662    |
+   | SwinV2            | ${\color{red}0.785}$         | ${\color{red}0.717}$ | 0.711   | 
+   | EffNetb5          | 0.726         | 0.711 | ${\color{red}0.711}$    |
 
 
 
